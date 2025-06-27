@@ -91,7 +91,7 @@ article p {
   margin-left: 1rem;
 }
 
-/* GALLERY */
+/* GALLERY STYLES */
 #gallery {
   display: grid;
   gap: 1.5rem;
@@ -115,7 +115,7 @@ article p {
   color: var(--dark-charcoal);
 }
 
-/* FOOTER */
+/* FOOTER STYLES */
 footer {
   text-align: center;
   padding: 2rem 0 1rem;
