@@ -1,7 +1,7 @@
 /* CSS BY DANIEL BOLADAS */
 
 /* IMPORTED FONTS */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap');
 
 /* CSS REST */
 * {
@@ -15,9 +15,10 @@
   --midnight-blue: #1F2A44;
   --olive-green: #76885B;
   --champagne-gold: #E5C185;
-  --linen: #F8F4EC;
-  --dark-charcoal: #2B2B2B;
   --soft-white: #FAF9F6;
+  --card-green: #88A17A;
+  --card-gold: #C5A96A;
+  --card-darkgreen: #647B4E;
   --font-main: 'Playfair Display', serif;
 }
 
@@ -25,133 +26,177 @@
 body {
   font-family: var(--font-main);
   background-color: var(--soft-white);
-  color: var(--dark-charcoal);
+  color: var(--midnight-blue);
   line-height: 1.6;
   padding: 1rem;
 }
 
-header {
+.site-header {
+  background-color: var(--midnight-blue);
+  color: white;
   text-align: center;
-  margin-bottom: 2rem;
+  padding: 2rem 1rem 1rem;
 }
 
-header img {
-  max-width: 150px;
-  margin: 0 auto;
-  display: block;
+.site-header img {
+  max-width: 80px;
+  margin-bottom: 1rem;
 }
 
-header h1 {
+.site-header h1 {
   font-size: 2rem;
-  margin-top: 0.5rem;
-  color: var(--midnight-blue);
+  font-weight: 700;
 }
 
-header p {
+.site-header p {
   font-style: italic;
-  color: var(--olive-green);
+  font-size: 1rem;
+  color: var(--champagne-gold);
 }
 
-nav ul {
-  list-style: none;
+.site-nav {
+  background-color: var(--champagne-gold);
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.site-nav ul {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: 2rem;
+  list-style: none;
 }
 
-nav a {
+.site-nav a {
   text-decoration: none;
-  color: var(--champagne-gold);
+  color: var(--midnight-blue);
   font-weight: bold;
 }
 
 main {
-  margin-top: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
 }
 
 section {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 h2 {
-  font-size: 1.5rem;
-  color: var(--midnight-blue);
+  font-size: 1.8rem;
   margin-bottom: 1rem;
 }
 
-h3 {
-  font-size: 1.2rem;
-  color: var(--olive-green);
-  margin-top: 1rem;
-}
-
-article p {
-  margin-left: 1rem;
-}
-
-/* GALLERY STYLES */
-#gallery {
+.card-grid {
   display: grid;
   gap: 1.5rem;
 }
 
-#gallery figure {
-  margin: 0;
+.card {
+  padding: 1rem;
+  border-radius: 8px;
+  color: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-#gallery img {
+.card-green {
+  background-color: var(--card-green);
+}
+
+.card-gold {
+  background-color: var(--card-gold);
+}
+
+.card-darkgreen {
+  background-color: var(--card-darkgreen);
+}
+
+.card-darkgreen ul {
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.gallery-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.gallery-grid figure {
+  background: white;
+  border-radius: 6px;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.gallery-grid img {
   width: 100%;
-  height: auto;
-  border-radius: 8px;
+  border-radius: 4px;
   display: block;
 }
 
-#gallery figcaption {
-  text-align: center;
+.gallery-grid figcaption {
+  font-size: 0.85rem;
   margin-top: 0.5rem;
-  font-style: italic;
-  color: var(--dark-charcoal);
 }
 
-/* FOOTER STYLES */
-footer {
+.gallery-button {
   text-align: center;
-  padding: 2rem 0 1rem;
-  border-top: 1px solid var(--champagne-gold);
-  margin-top: 2rem;
-  font-size: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+.gallery-button a {
+  background-color: var(--champagne-gold);
+  color: var(--midnight-blue);
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--midnight-blue);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+footer a {
+  color: var(--champagne-gold);
+  text-decoration: none;
+}
+
+footer .socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 0.75rem;
 }
 
 /* MEDIA QUERY (medium) */
 @media (min-width: 600px) {
-  body {
-    padding: 2rem;
+  .card-grid {
+    grid-template-columns: 1fr 1fr;
   }
-
-  #gallery {
+  .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 /* MEDIA QUERY (large) */
 @media (min-width: 900px) {
-  main {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 2rem;
-  }
-
-  #gallery {
+  .card-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
 /* MEDIA QUERY (xl) */
 @media (min-width: 1200px) {
   body {
-    max-width: 1200px;
     margin: 0 auto;
+    padding: 2rem;
   }
 }
